@@ -1,32 +1,42 @@
 import React from "react";
-import { Typography } from "@mui/material";
-import { TitleRounded } from "@mui/icons-material";
+import { Typography, Box } from "@mui/material";
 
 import Nav from "./Nav";
+import Searchbar from "./Searchbar";
 
 const Header = () => {
   return (
-    <header>
+    <header style={{ marginBottom: "20px" }}>
+      <Box
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"space-around"}
+      >
+        <div className="title">
+          <Typography
+            variant="h1"
+            align="center"
+            color="black"
+            fontFamily={"Old English Text MT"}
+            sx={{ fontWeight: "bold" }}
+            fontSize={"4rem"}
+          >
+            DnD Compendium
+          </Typography>
+        </div>
+        <div className="search">
+          <Searchbar />
+        </div>
+      </Box>
+      <br />
       <div
-        className="icon"
+        className="header-nav"
         style={{
           display: "flex",
+          justifyContent: "space-around",
           alignItems: "center",
-          justifyContent: "center",
         }}
       >
-        <Typography
-          variant="h1"
-          align="center"
-          color="black"
-          fontFamily={"Old English Text MT"}
-          sx={{ fontWeight: "bold" }}
-          fontSize={"4rem"}
-        >
-          DnD Compendium
-        </Typography>
-      </div>
-      <div>
         <Nav />
       </div>
     </header>

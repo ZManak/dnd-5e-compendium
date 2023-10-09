@@ -26,6 +26,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Sidetabs from "./components/Main/Sidetabs/Sidetabs";
 
 const client = new ApolloClient({
   uri: "https://www.dnd5eapi.co/graphql",
@@ -37,7 +38,10 @@ function Layout() {
   return (
     <div className="App">
       <Header />
-      <Outlet />
+      <div className="App-body" style={{ display: "flex" }}>
+        <Sidetabs />
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
@@ -63,7 +67,7 @@ const router = createBrowserRouter([
         element: <Random />,
       },
       {
-        path: "abilities",
+        path: "ability-scores",
         element: <Abilities />,
       },
       {

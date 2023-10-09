@@ -4,7 +4,9 @@ import { Typography, BottomNavigation } from "@mui/material";
 const Footer = () => {
   return (
     <footer>
-      <BottomNavigation></BottomNavigation>
+      <Typography align="center" color="black">
+        Powered by DnD5eAPI
+      </Typography>
       <Typography
         variant="h6"
         align="center"

@@ -5,20 +5,20 @@ import { Link } from "@mui/material";
 function Nav() {
   return (
     <div className="nav-bar">
-      <br />
       <div className="box">
         <Box
           sx={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Grid
             sx={{
               display: "flex",
               gap: "15px",
-              alignContent: "center",
+              alignItems: "center",
               justifyContent: "space-around",
             }}
           >
@@ -43,7 +43,7 @@ function Nav() {
               underline="hover"
               href="/search"
             >
-              SEARCH
+              ADVANCED SEARCH
             </Link>
             <Link
               style={{
@@ -54,7 +54,7 @@ function Nav() {
               underline="hover"
               href="/random"
             >
-              RANDOM
+              RANDOM ENTRY
             </Link>
           </Grid>
         </Box>

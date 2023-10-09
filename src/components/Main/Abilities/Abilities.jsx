@@ -7,42 +7,14 @@ import {
   ListItem,
   List,
 } from "@mui/material";
-import { useQuery } from "@apollo/client";
+import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import { GET_ABILITIES } from "../Search/Search";
 import { ExpandMoreOutlined } from "@mui/icons-material";
+import Loading from "../../Loading/Loading";
 
-/* const [ability, setAbility] = useState({ count: 0, results: [] }); // [ability, setAbility]
-  const { type } = useParams();
-
-  console.log(type);
-
-  useEffect(() => {
-    const getAbility = async () => {
-      const data = await fetch(`https://www.dnd5eapi.co/api/${type}`);
-      const response = await data.json();
-      console.log(response);
-      setAbility(response);
-    };
-    getAbility();
-  }, [type]);
-
-  const abilityName = ability?.results;
-  const abilityName2 = abilityName.map((ability, i) => {
-    return (
-      <div key={i}>
-        <a href={`http://localhost:3000/cat/ability-types/${ability.name}`}>
-          {abilityName[i].name}
-        </a>
-      </div>
-    );
-  });
-  console.log(abilityName);
-  console.log(abilityName2); */
-
-/* const GET_ABILITIES = gql`
-  query ExampleQuery($name: String!) {
-    abilityScores(name: $name) {
+const GET_ABILITIES = gql`
+  query ExampleQuery {
+    abilityScores {
       full_name
       desc
       skills {
@@ -51,7 +23,7 @@ import { ExpandMoreOutlined } from "@mui/icons-material";
       }
     }
   }
-`; */
+`;
 
 const Abilities = () => {
   const name = useParams();
@@ -60,21 +32,11 @@ const Abilities = () => {
 
   const { loading, error, data } = useQuery(GET_ABILITIES);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error : {error.message}</p>;
 
   return (
     <section className="abilities-expand">
-      {/* <div> */}
-      {/* <h2>Abilities</h2>
-        <div>
-          {data.abilityScores.map(({ full_name, name }) => (
-            <div key={name}>
-              <Link to={`/ability/${name}`}>{full_name}</Link>
-            </div>
-          ))}
-        </div>
-           </div> */}
       <div>
         <Box
           sx={{
