@@ -1,1 +1,1 @@
-export { default } from "./Search";
+export { GET_ABILITIES, Search } from "./Search";
