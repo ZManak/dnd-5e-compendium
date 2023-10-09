@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "../Main/Home";
-import AbilitiesCards from "../Main/AbilitiesCard";
-import Search from "../Main/Search";
+import Abilities from "../Main/Abilities";
+import Ability from "../Main/Abilities/Ability";
+import { Search } from "../Main/Search";
 import Random from "../Main/Random";
+import Classes from "../Main/Classes";
 
 const Main = () => {
   const [allTypes, setAllTypes] = useState([]);
-  console.log();
+  //const { name } = useParams();
+
   useEffect(() => {
     const fetchAllTypes = async () => {
       const data = await fetch("https://www.dnd5eapi.co/api");
@@ -19,17 +22,20 @@ const Main = () => {
 
   return (
     <div>
-      <a href="/">Home</a>
-      <a href="/search">Search</a>
-      <a href="/random">Get Random</a>
-      <h1>Welcome</h1>
-      <Routes>
+      <Home allTypes={allTypes} />
+      {/* <Routes>
         <Route path="/" element={<Home allTypes={allTypes} />} />
+        <Route path="/abilities" element={<Abilities />} />
+        <Route path={"/ability/"}>
+          <Route path={":name"} element={<Ability />} />
+        </Route>
+        <Route path="/search" element={<Search />} />
         <Route path={"/search/"}>
-          <Route path={":type"} element={<AbilitiesCards />} />
+          <Route path={":type"} element={<Abilities />} />
         </Route>
         <Route path="/random" element={<Random />} />
-      </Routes>
+        <Route path="/classes" element={<Classes />} />
+      </Routes> */}
     </div>
   );
 };

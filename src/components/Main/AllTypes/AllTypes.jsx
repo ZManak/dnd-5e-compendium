@@ -1,3 +1,4 @@
+import { makeUniqueId } from "@apollo/client/utilities";
 import React from "react";
 
 const AllTypes = (props) => {
@@ -7,9 +8,9 @@ const AllTypes = (props) => {
 
   const types = names.map((type) => {
     return (
-      <div>
-        <a href={`http://localhost:3000/search/${type}`}>{type}</a>
-        {/*<a href={`https://www.dnd5eapi.co/api/${type}`}>{type}</a>*/}
+      <div key={makeUniqueId("type")}>
+        <a href={`http://localhost:3000/${type}`}>{type}</a>
+        {/* {<a href={`https://www.dnd5eapi.co/api/${type}`}>{type}</a> */}
       </div>
     );
   });
