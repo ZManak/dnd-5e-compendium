@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Table, TableCell } from "@mui/material";
+import { Box, Button, Grid, Table, TableCell } from "@mui/material";
 import { Link } from "@mui/material";
 
 function Nav() {
@@ -23,6 +23,9 @@ function Nav() {
             }}
           >
             <Link
+              component={Button}
+              variant="contained"
+              color="secondary"
               style={{
                 border: "1px solid black",
                 padding: "4px 4px",
@@ -35,6 +38,9 @@ function Nav() {
             </Link>
 
             <Link
+              component={Button}
+              variant="button"
+              color="secondary"
               style={{
                 border: "1px solid black",
                 padding: "4px 4px",
@@ -46,6 +52,9 @@ function Nav() {
               ADVANCED SEARCH
             </Link>
             <Link
+              component={Button}
+              variant="button"
+              color="secondary"
               style={{
                 border: "1px solid black",
                 padding: "4px 4px",

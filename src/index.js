@@ -27,6 +27,7 @@ import reportWebVitals from "./reportWebVitals";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Sidetabs from "./components/Main/Sidetabs/Sidetabs";
+import E404 from "./components/ErrorPage/E404/E404";
 
 const client = new ApolloClient({
   uri: "https://www.dnd5eapi.co/graphql",
@@ -38,7 +39,7 @@ function Layout() {
   return (
     <div className="App">
       <Header />
-      <div className="App-body" style={{ display: "flex" }}>
+      <div className="App-body" style={{ display: "flex", minHeight: "75vh" }}>
         <Sidetabs />
         <Outlet />
       </div>
@@ -50,7 +51,7 @@ function Layout() {
 const router = createBrowserRouter([
   {
     element: <Layout />,
-    errorElement: <div>Not Found</div>,
+    errorElement: <E404 />,
     children: [
       {
         exact: true,

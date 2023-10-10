@@ -6,7 +6,12 @@ import Searchbar from "./Searchbar";
 
 const Header = () => {
   return (
-    <header style={{ marginBottom: "20px" }}>
+    <header
+      style={{
+        margin: "10px 10px",
+        borderBottom: "2px solid black",
+      }}
+    >
       <Box
         display={"flex"}
         alignItems={"center"}
@@ -19,26 +24,25 @@ const Header = () => {
             color="black"
             fontFamily={"Old English Text MT"}
             sx={{ fontWeight: "bold" }}
-            fontSize={"4rem"}
+            fontSize={"3rem"}
           >
             DnD Compendium
           </Typography>
         </div>
         <div className="search">
-          <Searchbar />
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            gap={"10px"}
+            paddingBottom={"10px"}
+          >
+            <Searchbar />
+            <Nav />
+          </Box>
         </div>
       </Box>
-      <br />
-      <div
-        className="header-nav"
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-        }}
-      >
-        <Nav />
-      </div>
     </header>
   );
 };

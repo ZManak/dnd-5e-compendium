@@ -12,7 +12,12 @@ const Home = (props) => {
     <div>
       {" "}
       <div>
-        <Box sx={{ flexGrow: 1, padding: "3%" }}>
+        <Box
+          display={"grid"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          sx={{ flexGrow: 1, padding: "3%" }}
+        >
           <Typography>
             Welcome to the DND Compendium! This site is a collection of Dungeons
             and Dragons 5th edition information. You can search for a specific

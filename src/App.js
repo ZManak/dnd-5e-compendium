@@ -24,9 +24,9 @@ function App() {
           justifyItems: "center",
         }}
       >
-        <Header />
+        {/* <Header /> */}
         <Main />
-        <Footer />
+        {/* '<Footer />' */}
       </Box>
     </div>
   );

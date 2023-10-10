@@ -13,7 +13,7 @@ import { ExpandMoreOutlined } from "@mui/icons-material";
 import Loading from "../../Loading/Loading";
 
 const GET_ABILITIES = gql`
-  query ExampleQuery {
+  query abiltiesQuery {
     abilityScores {
       full_name
       desc
@@ -32,7 +32,7 @@ const Abilities = () => {
 
   const { loading, error, data } = useQuery(GET_ABILITIES);
 
-  if (loading) return <Loading />;
+  if (loading || !data) return <Loading />;
   if (error) return <p>Error : {error.message}</p>;
 
   return (
